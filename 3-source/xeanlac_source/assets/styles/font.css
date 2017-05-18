@@ -41,6 +41,18 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: '8-5785-UNI Chu viet tay_sualoi';
+  src: url('../fonts/8-5785-UNI Chu viet tay_sualoi.eot');
+  src: url('../fonts/8-5785-UNI Chu viet tay_sualoi.eot?#iefix') format('embedded-opentype');
+  src: url('../fonts/UNIChuviettay.woff') format('woff'),
+       url('../fonts/UNIChuviettay.ttf') format('truetype'),
+       url('../fonts/UNIChuviettay.svg#UNIChuviettay') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 
 

@@ -7,17 +7,17 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using TLLib;
 
-public partial class gioi_thieu : System.Web.UI.Page
+public partial class tin_tuc_chi_tiet : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             string strTitle, strDescription, strMetaTitle, strMetaDescription;
-            if (!string.IsNullOrEmpty(Request.QueryString["gt"]))
+            if (!string.IsNullOrEmpty(Request.QueryString["gn"]))
             {
                 var oProduct = new Product();
-                var dv = oProduct.ProductSelectOne(Request.QueryString["gt"]).DefaultView;
+                var dv = oProduct.ProductSelectOne(Request.QueryString["gn"]).DefaultView;
 
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
@@ -28,9 +28,9 @@ public partial class gioi_thieu : System.Web.UI.Page
             }
             else
             {
-                strTitle = strMetaTitle = "Giới Thiệu";
-                strDescription = "Giới Thiệu";
-                strMetaDescription = "Giới Thiệu";
+                strTitle = strMetaTitle = "Góc Nhìn";
+                strDescription = "Góc Nhìn";
+                strMetaDescription = "Góc Nhìn";
             }
             Page.Title = !string.IsNullOrEmpty(strMetaTitle) ? strMetaTitle : strTitle;
             var meta = new HtmlMeta()
@@ -40,7 +40,7 @@ public partial class gioi_thieu : System.Web.UI.Page
                     strMetaDescription : strDescription
             };
             Header.Controls.Add(meta);
-            
+            lblProductTitle.Text = strTitle;
         }
     }
     protected string progressTitle(object input)

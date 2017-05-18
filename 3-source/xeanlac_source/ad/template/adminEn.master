@@ -156,6 +156,17 @@
                             </asp:RadMenuItem>
                         </Items>
                     </asp:RadMenuItem>
+                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Chia Sẻ Kiến Thức"
+                        Font-Bold="True">
+                        <Items>
+                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/knowledge.aspx" Text="Bài Viết">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" Text="Danh Mục" NavigateUrl="~/ad/bilingual/knowledgecategory.aspx">
+                            </asp:RadMenuItem>
+                        </Items>
+                    </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Góc Nhìn Bạn Đọc"
                         Font-Bold="True" NavigateUrl="~/ad/bilingual/readview.aspx">
                     </asp:RadMenuItem>
@@ -174,7 +185,9 @@
                     <asp:RadMenuItem runat="server" Text="Liên Hệ" PostBack="False" Font-Bold="True"
                         NavigateUrl="~/ad/bilingual/contact.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="Banner" PostBack="False" Font-Bold="True">
+                    <asp:RadMenuItem runat="server" Text="Banner" NavigateUrl="~/ad/bilingual/banner.aspx" PostBack="False" Font-Bold="True">
+                    </asp:RadMenuItem>
+                    <%--<asp:RadMenuItem runat="server" Text="Banner" PostBack="False" Font-Bold="True">
                         <Items>
                             <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/bannermain.aspx" Text="Banner Chính">
                             </asp:RadMenuItem>
@@ -203,7 +216,7 @@
                             <asp:RadMenuItem runat="server" Text="Banner Tuyển Dụng" NavigateUrl="~/ad/bilingual/bannercareer.aspx">
                             </asp:RadMenuItem>
                         </Items>
-                    </asp:RadMenuItem>
+                    </asp:RadMenuItem>--%>
                 </Items>
             </asp:RadMenu>
         </div>

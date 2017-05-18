@@ -33,13 +33,13 @@
     </div>
     <div class="container wapper-main">
         <div class="wrapper-content">
-            <asp:ListView ID="lstAbout" runat="server" DataSourceID="odsAbout"
+            <asp:ListView ID="lstAbout" runat="server" DataSourceID="odsAboutDetail"
                 EnableModelValidation="True">
                 <ItemTemplate>
                     <div class="title-main">
                         <h1><%# Eval("ProductName") %></h1>
                     </div>
-                    <div class="content-text">
+                    <div class="content-text font-chuviettay">
                         <%# Eval("Content") %>
                     </div>
                 </ItemTemplate>
@@ -47,31 +47,33 @@
                     <span runat="server" id="itemPlaceholder" />
                 </LayoutTemplate>
             </asp:ListView>
-            <asp:ObjectDataSource ID="odsAbout" runat="server" SelectMethod="ProductSelectAll"
+            <asp:ObjectDataSource ID="odsAboutDetail" runat="server" SelectMethod="ProductSelectOne"
                 TypeName="TLLib.Product">
                 <SelectParameters>
-                    <asp:Parameter DefaultValue="1" Name="StartRowIndex" Type="String" />
-                    <asp:Parameter DefaultValue="1" Name="EndRowIndex" Type="String" />
-                    <asp:Parameter Name="Keyword" Type="String" />
-                    <asp:Parameter Name="ProductName" Type="String" />
-                    <asp:Parameter Name="Description" Type="String" />
-                    <asp:Parameter Name="PriceFrom" Type="String" />
-                    <asp:Parameter Name="PriceTo" Type="String" />
-                    <asp:Parameter DefaultValue="1" Name="CategoryID" Type="String" />
-                    <asp:Parameter Name="ManufacturerID" Type="String" />
-                    <asp:Parameter Name="OriginID" Type="String" />
-                    <asp:Parameter Name="Tag" Type="String" />
-                    <asp:Parameter Name="InStock" Type="String" />
-                    <asp:Parameter Name="IsHot" Type="String" />
-                    <asp:Parameter Name="IsNew" Type="String" />
-                    <asp:Parameter Name="IsBestSeller" Type="String" />
-                    <asp:Parameter Name="IsSaleOff" Type="String" />
-                    <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                    <asp:Parameter Name="FromDate" Type="String" />
-                    <asp:Parameter Name="ToDate" Type="String" />
-                    <asp:Parameter Name="Priority" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    <asp:QueryStringParameter Name="ProductID" QueryStringField="gt" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+        </div>
+        <div class="news-related">
+            <div class="title-box">
+                <h1>Tin liên quan</h1>
+            </div>
+            <asp:ListView ID="lstServiceSame" runat="server" DataSourceID="odsServiceSame"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <li><a href='<%# progressTitle(Eval("ProductName")) + "-gt-" + Eval("ProductID") + ".aspx" %>'><%# Eval("ProductName") %></a></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <ul>
+                        <li runat="server" id="itemPlaceholder"></li>
+                    </ul>
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsServiceSame" runat="server" SelectMethod="ProductSameSelectAll"
+                TypeName="TLLib.Product">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="10" Name="RerultCount" Type="String" />
+                    <asp:QueryStringParameter DefaultValue="" Name="ProductID" QueryStringField="gt" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>

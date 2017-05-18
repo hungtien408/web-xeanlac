@@ -759,10 +759,6 @@ body .mobilep-right {
     padding: 0 10px;
     margin: 2px 0;
 }
-.contact-input .contact-textbox.verifycode{
-    width: 50%;
-    float:left;
-}
 
 .contact-input .contact-area {
     background-color: #fff;
@@ -1048,8 +1044,7 @@ body .mobilep-right {
 .about-left {
     display: inline-block;
     vertical-align: top;
-    width: 55%;
-    padding: 50px 0 0 0;
+    width: 60%;
 }
 
 .view-more {
@@ -1108,7 +1103,7 @@ body .mobilep-right {
 
 .about-img {
     position: relative;
-    padding: 0 55px 0 0;
+    padding: 0 35px 0 0;
 }
 
     .about-img::after {
@@ -1165,6 +1160,7 @@ body .mobilep-right {
     width: calc(25% - 4px);
     position: relative;
     margin: 0 0 4px 0;
+    vertical-align: top;
 }
 
     .proinfo img {
@@ -1406,17 +1402,26 @@ body .mobilep-right {
     margin: 30px;
 }
 
-.partner-bg {
-    width: 55%;
+.default-about {
     display: inline-block;
+    width: 60%;
     vertical-align: top;
 }
 
 .user-bg {
-    float: right;
+    display: inline-block;
     font-size: 15px;
-    width: calc(100% - 60%);
+    width: calc(40% - 4px);
+    vertical-align: top;
 }
+
+    .user-bg > h1 {
+        font-size: 30px;
+        color: #18633c;
+        text-align: center;
+        margin: 0 0 30px 0;
+        font-family: 'UTM Avo';
+    }
 
     .user-bg .item {
         position: relative;
@@ -1478,9 +1483,6 @@ body .mobilep-right {
 
 .news-all {
     margin: 60px 0 20px 0;
-}
-.news-all .new-box{
-    width: 100%;
 }
 
     .news-all > ul {
@@ -1727,7 +1729,7 @@ body .mobilep-right {
 
 .popup .popup-content {
     width: 480px;
-    height: 490px;
+    height: 432px;
     background: #fff;
     position: fixed;
     border-radius: 10px;
@@ -2550,10 +2552,11 @@ body .mobilep-right {
         width: 22px;
         height: 22px;
     }
-    .form-feedback
-    {
-        width:90%;
-    }
+
+.form-feedback {
+    width: 90%;
+}
+
 .form-box {
     width: 290px;
     display: inline-block;
@@ -2577,49 +2580,71 @@ body .mobilep-right {
     display: block;
     font-size: 13px;
     width: 100%;
-    height:40px;
-    padding:0 10px;
-    margin:4px 0;
+    height: 40px;
+    padding: 0 10px;
+    margin: 4px 0;
 }
-.feedback-area
-{
-    height:127px;
-    width:100%;
+
+.feedback-area {
+    height: 127px;
+    width: 100%;
     border: solid 1px #ddd;
     color: #222;
-    padding:5px 10px;
-    margin:4px 0 0 0 ;
+    padding: 5px 10px;
+    margin: 4px 0 0 0;
 }
-.feedback-code
-{
-    width:185px;
-    display:inline-block;
-}
-.feedback-button
-{
-    display:inline-block;
-    float:right;
-    margin:10px 0 0 0;
-}
-.product-all
-{
-   margin:40px 0 0 0;
-}
-.product-all .title-box
-{
-    margin: 0 0 30px 0;
-}
-.capcha{
+
+.feedback-code {
+    width: 185px;
     display: inline-block;
 }
-.capcha img {
-    float: left;
+
+.feedback-button {
+    display: inline-block;
+    float: right;
+    margin: 10px 0 0 0;
 }
-.capcha a {
-    background: url(../images/refesh.png) no-repeat center center;
-    display: block;
-    float: left;
-    text-indent: -9999em;
-    height: 31px;
-    width: 31px;
+
+.product-all {
+    margin: 40px 0 0 0;
+}
+
+    .product-all .title-box {
+        margin: 0 0 30px 0;
+    }
+
+.proinfo a {
+    text-decoration: none;
+}
+
+.text-box {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-family: 'UTM Avo';
+    background: #b8aa63;
+    color: #fff;
+}
+.library-box
+{
+    margin:40px 0 20px 0;
+}
+.library-box h1 {
+    font-size: 30px;
+    color: #18633c;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-family: 'UTM Avo';
+}
+.about-left .description
+{
+    font-family: '8-5785-UNI Chu viet tay_sualoi';
+    font-size:20px;
+    color:#aa9d5d;
+}
+.font-chuviettay{
+    font-family: '8-5785-UNI Chu viet tay_sualoi';
+    font-size: 25px;
+    color: #aa9d5d;
+    line-height: 35px;
 }

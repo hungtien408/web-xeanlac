@@ -60,11 +60,11 @@ function myfunload() {
                 items: 3
             },
             651: {
-                items: 2
+                items: 4
             },
 
             1000: {
-                items: 3
+                items:5
             },
 
         }
@@ -163,17 +163,6 @@ function myfunload() {
         dots: false,
         arrows: true,
         focusOnSelect: true,
-    });
-
-    $('.silderProduct').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        vertical: true,
-        dots: false,
-        arrows: false,
-        autoplaySpeed: 5000,
-
     });
 
     $('#videoSlide').slick({

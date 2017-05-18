@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="tin-tuc-chi-tiet.aspx.cs" Inherits="tin_tuc_chi_tiet" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="goc-nhin-chi-tiet.aspx.cs" Inherits="tin_tuc_chi_tiet" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -20,7 +20,7 @@
             <SelectParameters>
                 <asp:Parameter Name="StartRowIndex" Type="String" />
                 <asp:Parameter Name="EndRowIndex" Type="String" />
-                <asp:Parameter DefaultValue="9" Name="AdsCategoryID" Type="String" />
+                <asp:Parameter DefaultValue="12" Name="AdsCategoryID" Type="String" />
                 <asp:Parameter Name="CompanyName" Type="String" />
                 <asp:Parameter Name="Website" Type="String" />
                 <asp:Parameter Name="FromDate" Type="String" />
@@ -33,7 +33,7 @@
     </div>
     <div class="container wapper-main">
         <div id="site" class="corner">
-            <a href="tin-tuc.aspx" runat="server"><span>Tin tức</span></a><span>/</span><asp:Label ID="lblProductTitle" runat="server"></asp:Label>
+            <span>Góc nhìn</span><span>/</span><asp:Label ID="lblProductTitle" runat="server"></asp:Label>
         </div>
         <div class="wrapper-content">
             <asp:ListView ID="lstServiceDetail" runat="server" DataSourceID="odsServiceDetail"
@@ -53,7 +53,7 @@
             <asp:ObjectDataSource ID="odsServiceDetail" runat="server" SelectMethod="ProductSelectOne"
                 TypeName="TLLib.Product">
                 <SelectParameters>
-                    <asp:QueryStringParameter Name="ProductID" QueryStringField="tt" Type="String" />
+                    <asp:QueryStringParameter Name="ProductID" QueryStringField="gn" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
             <div class="news-related">
@@ -63,7 +63,7 @@
                 <asp:ListView ID="lstServiceSame" runat="server" DataSourceID="odsServiceSame"
                     EnableModelValidation="True">
                     <ItemTemplate>
-                        <li><a href='<%# progressTitle(Eval("ProductName")) + "-tt-" + Eval("ProductID") + ".aspx" %>'><%# Eval("ProductName") %></a></li>
+                        <li><a href='<%# progressTitle(Eval("ProductName")) + "-gn-" + Eval("ProductID") + ".aspx" %>'><%# Eval("ProductName") %></a></li>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <ul>
@@ -75,7 +75,7 @@
                     TypeName="TLLib.Product">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="10" Name="RerultCount" Type="String" />
-                        <asp:QueryStringParameter DefaultValue="" Name="ProductID" QueryStringField="tt" Type="String" />
+                        <asp:QueryStringParameter DefaultValue="" Name="ProductID" QueryStringField="gn" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
             </div>

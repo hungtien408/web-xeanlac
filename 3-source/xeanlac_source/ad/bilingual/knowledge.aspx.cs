@@ -204,7 +204,7 @@ public partial class ad_single_product : System.Web.UI.Page
             string MetaDescription = ((RadTextBox)row.FindControl("txtMetaDescription")).Text.Trim();
             string ProductName = ((RadTextBox)row.FindControl("txtProductName")).Text.Trim();
             string ConvertedProductName = Common.ConvertTitle(ProductName);
-            string Description = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtDescription")).Content.Trim()));//((RadTextBox)row.FindControl("txtDescription")).Text.Trim();
+            string Description = ((RadTextBox)row.FindControl("txtDescription")).Text.Trim();//HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtDescription")).Content.Trim())); //((RadTextBox)row.FindControl("txtDescription")).Text.Trim();
             string Content = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtContent")).Content.Trim()));
             string Price = ((RadNumericTextBox)row.FindControl("txtPrice")).Text.Trim();
             string OtherPrice = ((RadTextBox)row.FindControl("txtOtherPrice")).Text.Trim();
@@ -213,7 +213,7 @@ public partial class ad_single_product : System.Web.UI.Page
             string Tag = ((RadTextBox)row.FindControl("txtTag")).Text.Trim();
             string CategoryID = ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
             if ("".Equals(CategoryID))
-                CategoryID = "1";
+                CategoryID = "35";
             string ManufacturerID = ((RadComboBox)row.FindControl("ddlManufacturer")).SelectedValue;
             string OriginID = ((RadComboBox)row.FindControl("ddlOrigin")).SelectedValue;
             string InStock = ((CheckBox)row.FindControl("chkInStock")).Checked.ToString();
@@ -272,7 +272,7 @@ public partial class ad_single_product : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(ImageName))
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 200, 224);
+                    ResizeCropImage.ResizeByCondition(strFullPath, 270, 190);
                     ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
                 }
 
@@ -320,7 +320,7 @@ public partial class ad_single_product : System.Web.UI.Page
                     string strFullPath = "~/res/product/" + ImageName;
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 200, 224);
+                    ResizeCropImage.ResizeByCondition(strFullPath, 270, 190);
                     ResizeCropImage.CreateThumbNailByCondition("~/res/product/", "~/res/product/thumbs/", ImageName, 120, 120);
                 }
             }

@@ -28,6 +28,8 @@ public partial class site : System.Web.UI.MasterPage
                 activePage = "tin-tuc.aspx";
             else if (page.Contains("-vd-"))
                 activePage = "thu-vien.aspx";
+            else if (page.Contains("-gt-"))
+                activePage = "gioi-thieu.aspx";
             else if (!page.EndsWith("default.aspx"))
                 activePage = Path.GetFileName(page);
 
@@ -80,5 +82,9 @@ public partial class site : System.Web.UI.MasterPage
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         Response.Redirect("tim-kiem.aspx?kw=" + txtSearch.Text.Trim());
+    }
+    protected string progressTitle(object input)
+    {
+        return TLLib.Common.ConvertTitle(input.ToString());
     }
 }

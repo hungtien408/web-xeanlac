@@ -49,6 +49,13 @@
     .td-time {
         width: calc(253px - 4px);
     }
+
+    .about-left {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 245px);
+        margin: -20px 0 0 0;
+    }
 }
 
 
@@ -105,12 +112,17 @@
 
     .about-right {
         float: none;
-        width: 360px;
+        width: 235px;
         margin: 0 auto;
     }
 
     .about-left {
         width: 100%;
+        margin:40px 0 0 0;
+    }
+    .user-bg
+   {
+        width:100%;
     }
 
     .default-video .col-md-4, .default-service .col-md-4, .footer-top .col-md-4 {
@@ -166,6 +178,10 @@
 
     .tin-accodion {
         width: 1024px;
+    }
+    .default-about
+    {
+        width:100%;
     }
 }
 

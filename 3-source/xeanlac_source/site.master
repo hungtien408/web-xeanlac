@@ -164,7 +164,42 @@
                         <div class="container">
                             <ul id="menu" class="desktop-992">
                                 <li><a href="~/" runat="server">Trang chủ</a></li>
-                                <li><a href="gioi-thieu.aspx">Giới thiệu</a></li>
+                                <asp:ListView ID="lstAbout" runat="server" DataSourceID="odsAbout"
+                                    EnableModelValidation="True">
+                                    <ItemTemplate>
+                                        <li><a href='<%# progressTitle(Eval("ProductName")) + "-gt-" + Eval("ProductID") + ".aspx" %>'>Giới thiệu</a></li>
+                                    </ItemTemplate>
+                                    <LayoutTemplate>
+                                        <span runat="server" id="itemPlaceholder" />
+                                    </LayoutTemplate>
+                                </asp:ListView>
+                                <asp:ObjectDataSource ID="odsAbout" runat="server" SelectMethod="ProductSelectAll"
+                                    TypeName="TLLib.Product">
+                                    <SelectParameters>
+                                        <asp:Parameter DefaultValue="1" Name="StartRowIndex" Type="String" />
+                                        <asp:Parameter DefaultValue="1" Name="EndRowIndex" Type="String" />
+                                        <asp:Parameter Name="Keyword" Type="String" />
+                                        <asp:Parameter Name="ProductName" Type="String" />
+                                        <asp:Parameter Name="Description" Type="String" />
+                                        <asp:Parameter Name="PriceFrom" Type="String" />
+                                        <asp:Parameter Name="PriceTo" Type="String" />
+                                        <asp:Parameter DefaultValue="1" Name="CategoryID" Type="String" />
+                                        <asp:Parameter Name="ManufacturerID" Type="String" />
+                                        <asp:Parameter Name="OriginID" Type="String" />
+                                        <asp:Parameter Name="Tag" Type="String" />
+                                        <asp:Parameter Name="InStock" Type="String" />
+                                        <asp:Parameter Name="IsHot" Type="String" />
+                                        <asp:Parameter Name="IsNew" Type="String" />
+                                        <asp:Parameter Name="IsBestSeller" Type="String" />
+                                        <asp:Parameter Name="IsSaleOff" Type="String" />
+                                        <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                        <asp:Parameter Name="FromDate" Type="String" />
+                                        <asp:Parameter Name="ToDate" Type="String" />
+                                        <asp:Parameter Name="Priority" Type="String" />
+                                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                                    </SelectParameters>
+                                </asp:ObjectDataSource>
                                 <li><a href="san-pham.aspx">Sản phẩm</a></li>
                                 <li><a href="dich-vu.aspx">Dịch vụ</a></li>
                                 <li><a href="tin-tuc.aspx">Tin tức</a></li>
@@ -214,7 +249,7 @@
                                     </asp:ObjectDataSource>
                                 </div>
                             </div>
-                            <div class="user-bg">
+                            <%--  <div class="user-bg">
                                 <div class="silderProduct">
                                     <asp:ListView ID="lstGocNhin" runat="server" DataSourceID="odsGocNhin"
                                         EnableModelValidation="True">
@@ -266,7 +301,7 @@
                                         </SelectParameters>
                                     </asp:ObjectDataSource>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
