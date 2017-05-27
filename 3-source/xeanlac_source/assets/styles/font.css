@@ -52,7 +52,14 @@
   font-style: normal;
 }
 
-
+@font-face {
+    font-family: 'VNF-Futura';
+    src: url('../fonts/VNF-Futura.woff') format('woff'), 
+            url('../fonts/VNF-Futura Regular.eot') format('embedded-opentype'), 
+            url('../fonts/VNF-Futura.otf') format('opentype'),
+            url('../fonts/VNF-Futura.svg') format('svg'), 
+            url('../fonts/VNF-Futura.ttf') format('truetype');
+}
 
 
 

@@ -141,24 +141,27 @@
                                 </div>
                             </div>
                             <div class="header-right">
-                                <div class="header-follow">
-                                    Liên kết với chúng tôi tại:
-                                    <img src="assets/images/follow1.png" alt="" />
-                                    <img src="assets/images/follow2.png" alt="" />
-                                    <img src="assets/images/follow3.png" alt="" />
+                                <div class="head-slogan">
+                                    <p>Chúng tôi đứng sau thành công của bạn</p>                                    <p>We stand behind your success</p>
                                 </div>
-                                <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
-                                    <div class="form-search">
-                                        <asp:Button ID="btnSearch" CssClass="search-btn" runat="server" ValidationGroup="Search" OnClick="btnSearch_Click" />
-                                        <div class="search-input">
-                                            <asp:TextBox ID="txtSearch" CssClass="search-text" runat="server"></asp:TextBox>
-                                        </div>
+                                <div class="wrapSearch">
+                                    <div class="header-follow">
+                                        <img src="assets/images/follow1.png" alt="" />
+                                        <img src="assets/images/follow2.png" alt="" />
+                                        <img src="assets/images/follow3.png" alt="" />
                                     </div>
-                                </asp:Panel>
-                                <a class="panel-a menu-mo ipadmo-992" href="#menumobile" data-position="true" data-type="false"><span class="fa fa-reorder"></span>Menu</a>
+                                    <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch" CssClass="contentSearch">
+                                        <a class="panel-a menu-mo ipadmo-992" href="#menumobile" data-position="true" data-type="false"><span class="fa fa-reorder"></span>Menu</a>
+                                        <div class="form-search">
+                                            <asp:Button ID="btnSearch" CssClass="search-btn" runat="server" ValidationGroup="Search" OnClick="btnSearch_Click" />
+                                            <div class="search-input">
+                                                <asp:TextBox ID="txtSearch" CssClass="search-text" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                    </asp:Panel>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="wrapper-menu">
                         <div class="container">

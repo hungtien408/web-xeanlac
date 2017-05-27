@@ -96,6 +96,9 @@
 
     .header-follow {
         text-align: center;
+        display:block;
+        float:none;
+        margin-bottom:15px;
     }
 
     .form-search {
@@ -182,6 +185,11 @@
     .default-about
     {
         width:100%;
+    }
+    /**/
+    .wrapSearch .contentSearch {
+        display:block;
+        margin-right:0;
     }
 }
 
